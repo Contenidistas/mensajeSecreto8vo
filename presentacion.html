@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presentación — Misión: Mensaje Secreto</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-row">
+    <a class="brand" href="index.html"><span class="dot"></span>Misión: Mensaje Secreto</a>
+    <nav class="links">
+      <a href="index.html">Inicio</a>
+      <a href="presentacion.html" class="active">Presentación</a>
+      <a href="actividades/criptografia.html">1 · Criptografía</a>
+      <a href="actividades/esteganografia.html">2 · Esteganografía</a>
+      <a href="actividades/hashes.html">3 · Hashes</a>
+      <a href="actividades/desafio-final.html">Desafío final</a>
+      <a href="evaluacion.html">Evaluación</a>
+      <a href="guia-docente.html">Guía docente</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">🌓</button>
+  </div>
+</header>
+
+<main>
+  <div class="container deck">
+
+    <section class="slide active">
+      <p class="eyebrow">Ciencias de la Computación · 8° EBI</p>
+      <h1>Misión: Mensaje Secreto</h1>
+      <p class="lead">Criptografía, esteganografía y funciones hash para proteger la información digital.</p>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Pregunta disparadora</p>
+      <h1>¿Qué pasa realmente con un mensaje desde que lo enviamos hasta que llega a la otra persona?</h1>
+    </section>
+
+    <section class="slide">
+      <h2>Situaciones cotidianas</h2>
+      <ul>
+        <li>¿Cómo hace WhatsApp para que solo la persona destinataria pueda leer un mensaje?</li>
+        <li>¿Cómo sabe tu celular que una actualización no fue modificada antes de instalarla?</li>
+        <li>¿Cómo envían información sensible los bancos o las tiendas cuando hacés una compra por Internet?</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">La misión</p>
+      <h1>Enviar un mensaje secreto a otro equipo</h1>
+      <ul>
+        <li>Que no pueda ser <strong>leído</strong> si alguien lo intercepta.</li>
+        <li>Que no pueda ser <strong>descubierto</strong> aunque nadie lo lea.</li>
+        <li>Que se pueda comprobar que no fue <strong>modificado</strong> en el camino.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Etapa 1</p>
+      <h1>🔐 Criptografía</h1>
+      <blockquote class="question">¿Cómo hacemos para que nadie pueda leer nuestro mensaje si alguien lo intercepta?</blockquote>
+      <blockquote class="question">¿Alcanza con ponerle una contraseña a un archivo?</blockquote>
+    </section>
+
+    <section class="slide">
+      <h2>Contraseña de archivo ≠ cifrado</h2>
+      <ul>
+        <li>Una contraseña controla <strong>quién puede abrir</strong> el archivo.</li>
+        <li>Cifrar <strong>transforma el contenido</strong> mismo, con una clave.</li>
+        <li>Cifrado simétrico: la misma clave sirve para cifrar y para descifrar (así funciona WhatsApp).</li>
+        <li>Herramientas del recurso: cifrado César (didáctico) y cifrado XOR.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Etapa 2</p>
+      <h1>🖼️ Esteganografía</h1>
+      <blockquote class="question">Si el mensaje ya está cifrado, ¿todos saben igual que estamos enviando algo secreto?</blockquote>
+      <blockquote class="question">¿Qué pasaría si además de cifrarlo pudiéramos ocultar que existe?</blockquote>
+    </section>
+
+    <section class="slide">
+      <h2>Ocultar dentro de una imagen</h2>
+      <ul>
+        <li>Cada píxel se guarda como tres números: rojo, verde, azul (0 a 255).</li>
+        <li>Cambiar el último bit de cada número es invisible al ojo humano.</li>
+        <li>Ahí se puede "esconder" un mensaje, bit por bit.</li>
+        <li>No es solo digital: tinta invisible, micropuntos, mensajes ocultos en un texto.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Etapa 3</p>
+      <h1>🧬 Funciones hash</h1>
+      <blockquote class="question">Descargaste un mod para Minecraft. ¿Cómo sabés que nadie lo modificó para meterle un virus?</blockquote>
+    </section>
+
+    <section class="slide">
+      <h2>Una huella digital del contenido</h2>
+      <ul>
+        <li><strong>Determinística:</strong> la misma entrada siempre da el mismo hash.</li>
+        <li><strong>Unidireccional:</strong> no se puede "deshacer" para recuperar el original — no es cifrado.</li>
+        <li><strong>Efecto avalancha:</strong> un solo carácter distinto cambia el hash por completo.</li>
+        <li>Ejemplo cotidiano: los sitios web guardan el hash de tu contraseña, no la contraseña misma.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Desafío final</p>
+      <h1>Las tres técnicas juntas</h1>
+      <ul>
+        <li>Equipo A: cifra → oculta en una imagen → calcula el hash del mensaje original.</li>
+        <li>Equipo B: revela la imagen → descifra con la clave acordada → verifica el hash.</li>
+        <li>La clave se acuerda en persona, antes de empezar — nunca viaja junto al mensaje.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Para cerrar</h2>
+      <blockquote class="question">¿Por qué en la vida real no se usa una sola de estas técnicas?</blockquote>
+      <blockquote class="question">¿Qué aplicaciones que usamos todos los días creen que las usan?</blockquote>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Cierre</p>
+      <h1>Hoy usaron versiones simplificadas de técnicas reales</h1>
+      <p class="lead">Presentes todos los días cuando mandan un mensaje por WhatsApp, hacen una compra
+      por Internet, descargan un archivo o acceden a un servicio digital.</p>
+    </section>
+
+    <div class="deck-controls">
+      <button class="btn secondary" id="btn-prev">← Anterior</button>
+      <span class="deck-progress" id="deck-progress">1 / 13</span>
+      <button class="btn" id="btn-next">Siguiente →</button>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <span>Ciencias de la Computación · 8° EBI · ANEP</span>
+    <span>Eje: Alfabetización y Ciudadanía Digital</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const stored = localStorage.getItem('theme');
+  if (stored) document.documentElement.setAttribute('data-theme', stored);
+})();
+function toggleTheme(){
+  const root = document.documentElement;
+  const current = root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  const next = current === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+}
+
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+function showSlide(i){
+  slides.forEach(s => s.classList.remove('active'));
+  current = Math.max(0, Math.min(i, slides.length - 1));
+  slides[current].classList.add('active');
+  document.getElementById('deck-progress').textContent = (current + 1) + ' / ' + slides.length;
+  document.getElementById('btn-prev').disabled = current === 0;
+  document.getElementById('btn-next').disabled = current === slides.length - 1;
+}
+document.getElementById('btn-prev').addEventListener('click', () => showSlide(current - 1));
+document.getElementById('btn-next').addEventListener('click', () => showSlide(current + 1));
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') showSlide(current + 1);
+  if (e.key === 'ArrowLeft') showSlide(current - 1);
+});
+showSlide(0);
+</script>
+</body>
+</html>
