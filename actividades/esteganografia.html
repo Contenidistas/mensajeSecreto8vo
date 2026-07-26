@@ -84,6 +84,15 @@
           <button class="btn secondary" onclick="descargarImagen()">Descargar imagen resultante</button>
         </div>
         <p class="hint" id="ocultar-estado"></p>
+
+        <div class="callout">
+          <strong>El mensaje ya no se ve a simple vista — y eso está bien, es lo que buscamos.</strong>
+          No hay nada para "descargar como texto": el mensaje vive escondido dentro de los píxeles de
+          la imagen. Para comprobar que realmente quedó ahí, probá revelarlo:
+          <div class="btn-row">
+            <button class="btn" onclick="probarRevelado()">Probar que funcionó: revelar este mensaje →</button>
+          </div>
+        </div>
       </div>
 
       <div class="tab-panel" id="tab-revelar">
@@ -215,6 +224,16 @@ function usarUltimaGenerada(){
   canvasRevelar.width = canvasOcultar.width;
   canvasRevelar.height = canvasOcultar.height;
   canvasRevelar.getContext('2d').drawImage(canvasOcultar, 0, 0);
+}
+
+function probarRevelado(){
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('.tab-btn[data-tab="revelar"]').classList.add('active');
+  document.getElementById('tab-revelar').classList.add('active');
+  usarUltimaGenerada();
+  revelarMensaje();
+  document.getElementById('tab-revelar').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
 function bitPosToIndex(n){
