@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bibliografía — Misión: Mensaje Secreto</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-row">
+    <a class="brand" href="index.html"><span class="dot"></span>Misión: Mensaje Secreto</a>
+    <nav class="links">
+      <a href="index.html">Inicio</a>
+      <a href="presentacion.html">Presentación</a>
+      <a href="actividades/criptografia.html">1 · Criptografía</a>
+      <a href="actividades/esteganografia.html">2 · Esteganografía</a>
+      <a href="actividades/hashes.html">3 · Hashes</a>
+      <a href="actividades/desafio-final.html">Desafío final</a>
+      <a href="evaluacion.html">Evaluación</a>
+      <a href="guia-docente.html">Guía docente</a>
+      <a href="bibliografia.html" class="active">Bibliografía</a>
+      <a href="declaracion-ia.html">Uso de IA</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">🌓</button>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <p class="eyebrow">Bibliografía</p>
+    <h1>Bibliografía y fuentes</h1>
+    <p class="lead">
+      Fuentes utilizadas para fundamentar el contenido curricular, teórico y normativo de este recurso.
+    </p>
+
+    <h2>Documentos curriculares oficiales</h2>
+    <div class="card">
+      <p>
+        Administración Nacional de Educación Pública [ANEP]. (2026). <em>Programa de Ciencias de la
+        Computación — 7.º Educación Básica Integrada (EBI)</em>.
+      </p>
+      <p>
+        Administración Nacional de Educación Pública [ANEP]. (2026). <em>Programa de Ciencias de la
+        Computación — 8.º Educación Básica Integrada (EBI)</em>.
+      </p>
+      <p>
+        Administración Nacional de Educación Pública [ANEP]. (2026). <em>Programa de Ciencias de la
+        Computación — 9.º Educación Básica Integrada (EBI)</em>.
+      </p>
+      <p class="hint">
+        Usados para ubicar el recurso en el eje temático "Alfabetización y Ciudadanía Digital" de 8° EBI
+        y verificar que los contenidos de criptografía, esteganografía y funciones hash no estuvieran
+        cubiertos por ningún otro recurso existente del programa.
+      </p>
+    </div>
+
+    <h2>Bibliografía técnica</h2>
+    <div class="card">
+      <p>
+        Chapple, M. y Seidl, D. (2021). <em>CompTIA Security+ Study Guide: Exam SY0-601</em> (8.ª ed.).
+        Sybex / John Wiley &amp; Sons.
+      </p>
+      <p class="hint">
+        Fuente teórica para los contenidos de criptografía (cifrado simétrico) y funciones hash
+        desarrollados en las Etapas 1 y 3 del recurso, en particular el Capítulo 7,
+        "Cryptography and the Public Key Infrastructure".
+      </p>
+    </div>
+
+    <h2>Normativa sobre uso de Inteligencia Artificial</h2>
+    <div class="card">
+      <p>
+        Consejo Directivo Central [CODICEN], Administración Nacional de Educación Pública. (2024).
+        <em>Circular N.º 23/2024: La inteligencia artificial en la educación</em>. ANEP.
+      </p>
+      <p class="hint">
+        Documento institucional que sustenta la <a href="declaracion-ia.html">Declaración de uso de IA</a>
+        de este recurso.
+      </p>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn secondary" href="guia-docente.html">← Guía docente</a>
+      <a class="btn" href="declaracion-ia.html">Ver Declaración de uso de IA →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <span>Ciencias de la Computación · 8° EBI · ANEP</span>
+    <span>Eje: Alfabetización y Ciudadanía Digital</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const stored = localStorage.getItem('theme');
+  if (stored) document.documentElement.setAttribute('data-theme', stored);
+})();
+function toggleTheme(){
+  const root = document.documentElement;
+  const current = root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  const next = current === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+}
+</script>
+</body>
+</html>
