@@ -413,6 +413,20 @@ table.rubric td { color: var(--text-dim); }
   font-family: var(--mono);
 }
 
+.slide-photo {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: block;
+}
+.photo-credit {
+  text-align: center;
+  font-size: .72rem;
+  color: var(--text-dim);
+  margin-top: 6px;
+}
+.photo-credit a { color: var(--text-dim); }
+
 .video-slot {
   border: 2px dashed var(--border);
   border-radius: 12px;
