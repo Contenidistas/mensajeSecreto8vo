@@ -423,6 +423,24 @@ table.rubric td { color: var(--text-dim); }
   margin-top: 18px;
 }
 .video-slot .video-icon { font-size: 1.8rem; display: block; margin-bottom: 8px; }
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  margin: 18px auto 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.video-embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 .video-slot strong { color: var(--text); display: block; margin-bottom: 4px; }
 .video-slot p { margin: 4px 0 0; font-size: .82rem; }
 
