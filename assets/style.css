@@ -395,6 +395,37 @@ table.rubric td { color: var(--text-dim); }
 .slide ul { color: var(--text-dim); font-size: 1.05rem; }
 .slide li { margin-bottom: 8px; }
 
+.slide-flex {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.slide-flex .slide-text { flex: 1 1 320px; }
+.slide-flex .slide-media { flex: 1 1 220px; max-width: 280px; margin: 0 auto; }
+.diagram { width: 100%; height: auto; color: var(--accent); }
+.diagram .accent2 { color: var(--accent-2); }
+.diagram-caption {
+  text-align: center;
+  font-size: .8rem;
+  color: var(--text-dim);
+  margin-top: 8px;
+  font-family: var(--mono);
+}
+
+.video-slot {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 22px 18px;
+  text-align: center;
+  color: var(--text-dim);
+  background: var(--bg-elev-2);
+  margin-top: 18px;
+}
+.video-slot .video-icon { font-size: 1.8rem; display: block; margin-bottom: 8px; }
+.video-slot strong { color: var(--text); display: block; margin-bottom: 4px; }
+.video-slot p { margin: 4px 0 0; font-size: .82rem; }
+
 .deck-controls {
   position: sticky;
   bottom: 0;
